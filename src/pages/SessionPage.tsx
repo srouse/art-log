@@ -1,6 +1,7 @@
-import { useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { PrintSpreads } from '../components/Sheet'
+import { ImageLightbox, PrintSpreads } from '../components/Sheet'
+import type { PlannedImage } from '../types'
 import { useImageDimensions } from '../hooks/useImageDimensions'
 import { planSheets } from '../lib/layoutPlanner'
 import { useSessions } from '../context/SessionsContext'
@@ -26,6 +27,47 @@ export function SessionPage() {
   const { images: sized, error: loadError } = useImageDimensions(sources)
 
   const sheets = useMemo(() => (sized && sized.length > 0 ? planSheets(sized) : []), [sized])
+
+  const plannedImages: PlannedImage[] = useMemo(
+    () =>
+      sized
+        ? sized.map((img) => ({
+            id: img.id,
+            src: img.src,
+            capturedAt: img.capturedAt ?? null,
+          }))
+        : [],
+    [sized],
+  )
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), [])
+
+  const openLightboxForCell = useCallback((cell: PlannedImage) => {
+    const i = plannedImages.findIndex((p) => p.id === cell.id)
+    setLightboxIndex(i >= 0 ? i : null)
+  }, [plannedImages])
+
+  const goPrevLightbox = useCallback(() => {
+    setLightboxIndex((i) => {
+      if (i === null || i <= 0) return i
+      return i - 1
+    })
+  }, [])
+
+  const goNextLightbox = useCallback(() => {
+    setLightboxIndex((i) => {
+      if (i === null) return null
+      const last = plannedImages.length - 1
+      if (i >= last) return i
+      return i + 1
+    })
+  }, [plannedImages.length])
+
+  useEffect(() => {
+    setLightboxIndex(null)
+  }, [sessionId])
 
   if (!data) {
     return (
@@ -68,6 +110,13 @@ export function SessionPage() {
     )
   }
 
+  const lightboxCell =
+    lightboxIndex !== null &&
+    lightboxIndex >= 0 &&
+    lightboxIndex < plannedImages.length
+      ? plannedImages[lightboxIndex]
+      : null
+
   return (
     <div className="session-page">
       <header className="session-toolbar no-print">
@@ -85,7 +134,25 @@ export function SessionPage() {
         </div>
       </header>
 
-      <PrintSpreads sheets={sheets} sessionTitle={session.label} />
+      <PrintSpreads
+        sheets={sheets}
+        sessionTitle={session.label}
+        onImageOpen={openLightboxForCell}
+      />
+      {lightboxCell && lightboxIndex !== null ? (
+        <ImageLightbox
+          cell={lightboxCell}
+          onClose={closeLightbox}
+          {...(plannedImages.length > 1
+            ? {
+                onPrev: goPrevLightbox,
+                onNext: goNextLightbox,
+                canPrev: lightboxIndex > 0,
+                canNext: lightboxIndex < plannedImages.length - 1,
+              }
+            : {})}
+        />
+      ) : null}
     </div>
   )
 }
