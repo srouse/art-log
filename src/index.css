@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+  min-height: 0;
+}
+
+@media screen {
+  body {
+    overflow: hidden;
+  }
+}
+
+.muted {
+  color: #5c5852;
+  font-size: 0.92rem;
+}
+
+.error {
+  color: #a42020;
+}
+
+.session-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.session-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.session-toolbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.session-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.session-meta {
+  margin: 0;
+}
+
+.print-reminder {
+  font-size: 0.82rem;
+  margin: 0 0 1rem;
+  line-height: 1.45;
+}
+
+.code-block {
+  background: #1f1c1a;
+  color: #f0ebe3;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  overflow: auto;
+  font-size: 0.85rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn.small {
+  padding: 0.28rem 0.55rem;
+  font-size: 0.72rem;
+}
+
+.btn.primary {
+  background: #1f1c1a;
+  color: #faf8f4;
+}
+
+.btn.primary:hover {
+  background: #2e2926;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #d8d2c8;
+}
+
+.btn.ghost:hover {
+  background: #ffffff14;
+  color: #fff;
+}
+
+@media print {
+  body {
+    overflow: visible !important;
+  }
+
+  #root {
+    height: auto;
+    min-height: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Screen max-width (~10in) is narrower than two physical sheets side by side; without this,
+     flex-wrap stacks cards vertically and the second page breaks onto another sheet. */
+  .session-page {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}

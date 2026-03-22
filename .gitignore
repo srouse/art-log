@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Build / bundler
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment (keep .env.example committed if you add one)
+.env
+.env.*
+!.env.example
+
+# Logs & debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Vite
+.vite/
+
+# Optional: local Netlify / Vercel
+.netlify/
+.vercel/
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editors & IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Optional: uncomment if you don’t want shared VS Code settings in the repo
+# .vscode/
+# !.vscode/extensions.json
+# !.vscode/settings.json

@@ -1,0 +1,152 @@
+{
+  "sessions": [
+    {
+      "id": "2026-03-21",
+      "label": "2026-03-21",
+      "date": "2026-03-22",
+      "images": [
+        {
+          "path": "/sessions/2026-03-21/1-IMG_6780.jpg",
+          "capturedAt": "2026-03-22T00:45:41.285Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6767.jpg",
+          "capturedAt": "2026-03-22T00:45:38.700Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6769.jpg",
+          "capturedAt": "2026-03-22T00:45:39.222Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6771.jpg",
+          "capturedAt": "2026-03-22T00:45:39.596Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6772.jpg",
+          "capturedAt": "2026-03-22T00:45:40.130Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6777.jpg",
+          "capturedAt": "2026-03-22T00:45:40.488Z"
+        },
+        {
+          "path": "/sessions/2026-03-21/IMG_6779.jpg",
+          "capturedAt": "2026-03-22T00:45:40.843Z"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-21-02",
+      "label": "2026-03-21-02",
+      "date": "2026-03-22",
+      "images": [
+        {
+          "path": "/sessions/2026-03-21-02/IMG_6781.jpg",
+          "capturedAt": "2026-03-22T00:45:41.715Z"
+        },
+        {
+          "path": "/sessions/2026-03-21-02/IMG_6782.jpg",
+          "capturedAt": "2026-03-22T01:04:59.669Z"
+        },
+        {
+          "path": "/sessions/2026-03-21-02/IMG_6783.jpg",
+          "capturedAt": "2026-03-22T01:05:00.138Z"
+        },
+        {
+          "path": "/sessions/2026-03-21-02/IMG_6784.jpg",
+          "capturedAt": "2026-03-22T01:05:00.493Z"
+        }
+      ]
+    },
+    {
+      "id": "pill-red",
+      "label": "pill-red",
+      "date": "2026-03-22",
+      "images": [
+        {
+          "path": "/sessions/pill-red/IMG_6769.jpg",
+          "capturedAt": "2026-03-22T00:45:39.222Z"
+        },
+        {
+          "path": "/sessions/pill-red/IMG_6780.jpg",
+          "capturedAt": "2026-03-22T00:45:41.285Z"
+        },
+        {
+          "path": "/sessions/pill-red/IMG_6783.jpg",
+          "capturedAt": "2026-03-22T01:05:00.138Z"
+        }
+      ]
+    },
+    {
+      "id": "scissors-blue",
+      "label": "scissors-blue",
+      "date": "2026-03-22",
+      "images": [
+        {
+          "path": "/sessions/scissors-blue/1-IMG_6780.jpg",
+          "capturedAt": "2026-03-22T00:45:41.285Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6453.jpg",
+          "capturedAt": "2026-03-22T01:13:27.905Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6454.jpg",
+          "capturedAt": "2026-03-22T01:13:28.362Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6467.jpg",
+          "capturedAt": "2026-03-22T01:13:28.838Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6635 2.jpg",
+          "capturedAt": "2026-03-22T01:13:29.252Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6636 2.jpg",
+          "capturedAt": "2026-03-22T01:13:29.695Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6637.jpg",
+          "capturedAt": "2026-03-22T01:13:30.187Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6641 2.jpg",
+          "capturedAt": "2026-03-22T01:13:30.565Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6767.jpg",
+          "capturedAt": "2026-03-22T00:45:38.700Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6769.jpg",
+          "capturedAt": "2026-03-22T00:45:39.222Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6771.jpg",
+          "capturedAt": "2026-03-22T00:45:39.596Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6777.jpg",
+          "capturedAt": "2026-03-22T00:45:40.488Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6779.jpg",
+          "capturedAt": "2026-03-22T00:45:40.843Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6781.jpg",
+          "capturedAt": "2026-03-22T00:45:41.715Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6782.jpg",
+          "capturedAt": "2026-03-22T01:04:59.669Z"
+        },
+        {
+          "path": "/sessions/scissors-blue/IMG_6784.jpg",
+          "capturedAt": "2026-03-22T01:05:00.493Z"
+        }
+      ]
+    }
+  ]
+}

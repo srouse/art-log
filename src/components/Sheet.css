@@ -1,0 +1,136 @@
+/* Sheet size vars set on .print-root from src/constants.ts */
+.sheet {
+  --sheet-w: min(100%, var(--sheet-preview-max-px, 560px));
+  width: var(--sheet-w);
+  height: calc(var(--sheet-w) * var(--sheet-ar-h, 5) / var(--sheet-ar-w, 4));
+  background: #faf9f7;
+  border: 1px solid #1a1a1a14;
+  box-shadow: 0 12px 40px #00000014;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sheet-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  background: #1a1a1a;
+}
+
+.sheet-cell {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  background: #111;
+}
+
+.sheet-cell--empty {
+  background: #1a1a1a;
+}
+
+.sheet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.sheet-cell-date {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.2rem 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  color: #f5f3ef;
+  background: rgb(0 0 0 / 0.58);
+  text-align: center;
+  pointer-events: none;
+}
+
+.sheet-footer {
+  flex-shrink: 0;
+  padding: 0.42rem 0.55rem 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: #2a2622;
+  border-top: 1px solid #1a1a1a12;
+  background: #f3f1ed;
+}
+
+.print-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.print-spread {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.print-spread--single {
+  justify-content: center;
+}
+
+@media print {
+  .print-root {
+    gap: 0;
+  }
+
+  .print-spread {
+    flex-wrap: nowrap;
+    break-inside: avoid;
+    page-break-after: always;
+    page-break-inside: avoid;
+    gap: var(--print-spread-gap, 0.28in);
+    width: 100%;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .print-spread:last-child {
+    page-break-after: auto;
+  }
+
+  .sheet {
+    --sheet-w: var(--sheet-print-w, 4in);
+    width: var(--sheet-print-w, 4in) !important;
+    height: var(--sheet-print-h, 5in) !important;
+    max-width: none;
+    box-shadow: none;
+    border: 1px solid #00000033;
+    break-inside: avoid;
+  }
+
+  .sheet-footer {
+    font-size: 0.12in;
+    padding: 0.07in 0.09in 0.08in;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .sheet-cell-date {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
